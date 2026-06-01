@@ -82,7 +82,7 @@ pip install pandas geopandas shapely selenium webdriver-manager requests openpyx
 
 2. Les fichiers de données : placer les deux fichiers sources (pharmacies_point.csv et ListingPharmaciesGrandEstfeb2026.xlsx) dans le même dossier que le notebook.
 
-3. Lancement du code : ouvrez le notebook analyse_pharmacies_grand_est.ipynb. Dans la partie 8 (Boucle par lot), j'ai laisse deux variables que vous pouvez modifier pour éviter de faire tourner le script sur des milliers de lignes d'un coup, ce qui prendrait des heures :
+3. Lancement du code : ouvrez le notebook analyse_pharmacies_grand_est.ipynb. Dans la partie 8 (Boucle par lot), le script est configuré pour ne traiter que 100 pharmacies à la fois en commençant par le début du fichier. Vous pouvez modifier ces deux variables pour tester le code rapidement, ce qui évite de lancer le script sur des milliers de lignes d'un coup.
 
 ```python
 BATCH_SIZE = 100  # Nombre de pharmacies a scraper en meme temps
