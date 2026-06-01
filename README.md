@@ -1,4 +1,4 @@
-# Analyse_avis_pharmarcies_grand_est
+# Analyse-avis-pharmarcies-grand-est
 
 # Scraping et Analyse des Avis Google Maps : Pharmacies du Grand Est
 
@@ -67,28 +67,25 @@ avis_texte : Contenu textuel de l'avis client.
 
 reponse_owner : Reponse apportee par la pharmacie a l'avis client.
 
-
 ## Comment tester ou relancer le script
-### Note sur la confidentialité des données: 
-Le fichier source de référence (ListingPharmaciesGrandEst2026.xlsx)
 
-étant un document interne, il n'est pas partagé dans ce depot public. Les instructions ci-dessous sont fournies a titre indicatif pour demontrer la reproductibilité du code.
+ **Note sur la confidentialité des données :** *Le fichier source de référence (`ListingPharmaciesGrandEstfeb2026.xlsx`) étant un document interne, il n'est pas partagé dans ce dépôt public. Les instructions ci-dessous sont fournies à titre indicatif pour démontrer la reproductibilité du code.*
 
-Si vous disposiez des fichiers sources, voici les étapes a suivre pour exécuter le pipeline :
+Si vous disposiez des fichiers sources, voici les étapes à suivre pour exécuter le pipeline :
 
-Prerequis : Avoir Python 3.8+ et Google Chrome installes.
+**Prérequis :** Avoir Python 3.8+ et Google Chrome installés.
 
-1. Les bibliotheques à installer : il faut d'abord installer les packages que j'ai utilises en tapant ceci dans votre terminal :
-   
+1. **Les bibliothèques à installer :** Il faut d'abord installer les packages nécessaires en tapant ceci dans votre terminal :
 ```bash
 pip install pandas geopandas shapely selenium webdriver-manager requests openpyxl
 ```
 
-2. Les fichiers de données : pour que le script fonctionne, il faut bien penser a mettre les deux fichiers sources (pharmacies_point.csv et ListingPharmaciesGrandEstfeb2026.xlsx) dans le meme dossier que le notebook.
+2. Les fichiers de données : placer les deux fichiers sources (pharmacies_point.csv et ListingPharmaciesGrandEstfeb2026.xlsx) dans le même dossier que le notebook.
 
 3. Lancement du code : ouvrez le notebook analyse_pharmacies_grand_est.ipynb. Dans la partie 8 (Boucle par lot), j'ai laisse deux variables que vous pouvez modifier pour éviter de faire tourner le script sur des milliers de lignes d'un coup, ce qui prendrait des heures :
 
 ```python
 BATCH_SIZE = 100  # Nombre de pharmacies a scraper en meme temps
-START = 0         # Ligne de depart dans le fichier
+START = 1300    # Ligne de depart dans le fichier (mettre à 0 pour tout recommencer)
+
 ```
