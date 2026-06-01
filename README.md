@@ -68,10 +68,16 @@ avis_texte : Contenu textuel de l'avis client.
 reponse_owner : Reponse apportee par la pharmacie a l'avis client.
 
 
+## Comment tester ou relancer le script
+### Note sur la confidentialité des données: 
+Le fichier source de référence (ListingPharmaciesGrandEst2026.xlsx)
 
-Comment tester ou relancer le script
-Si vous souhaitez faire tourner mon code sur votre ordinateur pour le tester, voici les étapes à suivre.
+étant un document interne, il n'est pas partagé dans ce depot public. Les instructions ci-dessous sont fournies a titre indicatif pour demontrer la reproductibilité du code.
+
+Si vous disposiez des fichiers sources, voici les étapes a suivre pour exécuter le pipeline :
+
 Prerequis : Avoir Python 3.8+ et Google Chrome installes.
+
 1. Les bibliotheques à installer : il faut d'abord installer les packages que j'ai utilises en tapant ceci dans votre terminal :
    
 ```bash
@@ -79,6 +85,7 @@ pip install pandas geopandas shapely selenium webdriver-manager requests openpyx
 ```
 
 2. Les fichiers de données : pour que le script fonctionne, il faut bien penser a mettre les deux fichiers sources (pharmacies_point.csv et ListingPharmaciesGrandEstfeb2026.xlsx) dans le meme dossier que le notebook.
+
 3. Lancement du code : ouvrez le notebook analyse_pharmacies_grand_est.ipynb. Dans la partie 8 (Boucle par lot), j'ai laisse deux variables que vous pouvez modifier pour éviter de faire tourner le script sur des milliers de lignes d'un coup, ce qui prendrait des heures :
 
 ```python
